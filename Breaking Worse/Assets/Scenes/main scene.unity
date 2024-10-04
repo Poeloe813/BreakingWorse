@@ -20357,7 +20357,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1891480297044500, guid: b3c84e6efa50bcc4c8e8073c9f0fd143, type: 3}
       propertyPath: m_Name
-      value: DesertRock02 (85)
+      value: rick
       objectReference: {fileID: 0}
     - target: {fileID: 4824009527463958, guid: b3c84e6efa50bcc4c8e8073c9f0fd143, type: 3}
       propertyPath: m_LocalPosition.x
