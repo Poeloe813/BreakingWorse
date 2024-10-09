@@ -1,19 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+//using UnityEngine;
 
-public class EnemyFollow : MonoBehaviour
-{
-    public int speed;
+//namespace Assets.scripts
+//{
+//    public class EnemyFollow : MonoBehaviour
+//    {
+//        public int Speed;
 
-    private Rigidbody rb;
+//        private Rigidbody rb;
 
-    void Start()
-    {
-        rb = GetComponent<Rigidbody>();
-    }
-    void Update()
-    {
-        
-    }
-}
+//        private void Start()
+//        {
+//            rb = GetComponent<Rigidbody>();
+//        }
+//        void Update()
+//        {
+            
+//        }
+//    }
+//}
