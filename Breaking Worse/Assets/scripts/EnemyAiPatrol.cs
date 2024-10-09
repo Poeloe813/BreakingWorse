@@ -18,9 +18,7 @@ public class EnemyAiPatrol : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.Find("player");
-    }
-
-    void Update()
+    } void Update()
     {
         Patrol();
     }

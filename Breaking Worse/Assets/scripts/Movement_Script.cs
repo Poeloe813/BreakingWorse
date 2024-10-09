@@ -19,6 +19,7 @@ public class Movement1 : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+       
     }
 
     private void Update()
