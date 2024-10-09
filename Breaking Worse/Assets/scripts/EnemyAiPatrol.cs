@@ -9,18 +9,38 @@ public class EnemyAiPatrol : MonoBehaviour
     NavMeshAgent agent;
     [SerializeField] LayerMask groundLayer, playerLayer;
 
-    //rond lopen(patrol)
+    //patrol
     Vector3 destPoint;
     bool walkpointSet;
     [SerializeField] float walkrange;
+
+    //state change
+    [SerializeField] private float sightRange, attackRange;
+    bool playerInSight, playerInAttackRange;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.Find("player");
-    } void Update()
+    }
+
+    void Update()
     {
-        Patrol();
+        playerInSight = Physics.CheckSphere(transform.position, sightRange, playerLayer);
+        playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, playerLayer);
+        if (!playerInAttackRange && !playerInSight) Patrol();
+        if (!playerInAttackRange && playerInSight) Chase();
+        if (playerInAttackRange && playerInSight) Attack();
+    }
+
+    void Chase()
+    {
+        agent.SetDestination(player.transform.position);
+    }
+
+    void Attack()
+    {
+        //attack player
     }
 
     void Patrol()
