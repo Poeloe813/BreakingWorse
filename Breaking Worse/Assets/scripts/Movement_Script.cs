@@ -11,7 +11,11 @@ public class Movement_Script : MonoBehaviour
     public Camera Camera;
     public float speed;
 
+
+
     private Rigidbody rb;
+
+    private Vector3 direction;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,16 +23,21 @@ public class Movement_Script : MonoBehaviour
        
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
         rb.rotation = new Quaternion(transform.rotation.x, Camera.transform.rotation.y, transform.rotation.z, transform.rotation.w).normalized;
         Camera.transform.position = rb.position;
-        rb.transform.GetChild(0).rotation = Camera.transform.rotation;
+        rb.velocity = rb.rotation * direction;
+
+    }
+    // Update is called once per frame
+    void Update()
+    {
+
     }
 
     private void OnMove(InputValue value)
     {
-        rb.velocity = rb.rotation * new Vector3(value.Get<Vector2>().x * speed, rb.velocity.y, value.Get<Vector2>().y * speed);
+        direction = new Vector3(value.Get<Vector2>().x * speed, rb.velocity.y, value.Get<Vector2>().y * speed);
     }
 }
