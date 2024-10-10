@@ -16,6 +16,7 @@ public class Movement_Script : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+       
     }
 
     // Update is called once per frame

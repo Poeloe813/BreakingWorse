@@ -152,6 +152,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   walkrange: 10
+  sightRange: 6
+  attackRange: 1
 --- !u!1 &3987171993284693548
 GameObject:
   m_ObjectHideFlags: 0
