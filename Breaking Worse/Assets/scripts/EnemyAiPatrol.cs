@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyAiPatrol : MonoBehaviour
 {
     GameObject player;
+
+    public PlayerHp playerHp;
 
     //player
     NavMeshAgent agent;
@@ -28,6 +31,12 @@ public class EnemyAiPatrol : MonoBehaviour
     [SerializeField] private float sightRange, attackRange;
     bool playerInSight, playerInAttackRange;
     // of de player in zicht is en of de player in aanvals range is
+    [SerializeField] private float cooldownTime;
+    // cooldown tijd
+
+    private float nextAttackTime;
+
+    private bool isCoolingDown() => Time.time < nextAttackTime;
 
     void Start()
     {
@@ -59,7 +68,18 @@ public class EnemyAiPatrol : MonoBehaviour
 
     void Attack()
     {
+        if (isCoolingDown())
+        {
+            return;
+        }
+
+        playerHp.Health -= 1;
         
+        StartCooldown();
+    }
+    private void StartCooldown()
+    {
+        nextAttackTime = Time.time + cooldownTime;
     }
 
     void Patrol()

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5672456439220526566}
   - component: {fileID: 6350470249683289466}
   - component: {fileID: 1475158622329721499}
+  - component: {fileID: -1762817641504975362}
   - component: {fileID: -2952824461786134261}
   m_Layer: 0
   m_Name: EnemyTest(follow)
@@ -133,6 +134,19 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &-1762817641504975362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561017759436523703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebe9ee939134c8747805038194d17397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 10
 --- !u!114 &-2952824461786134261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,15 +159,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e71feb3e7211f942a08aa604b4ee7f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerHp: {fileID: -1762817641504975362}
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
   playerLayer:
     serializedVersion: 2
     m_Bits: 128
-  walkrange: 10
-  sightRange: 6
-  attackRange: 1
+  walkrange: 20
+  sightRange: 20
+  attackRange: 1.5
+  cooldownTime: 1.2
 --- !u!1 &3987171993284693548
 GameObject:
   m_ObjectHideFlags: 0
