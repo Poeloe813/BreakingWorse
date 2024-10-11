@@ -23,16 +23,12 @@ public class Movement_Script : MonoBehaviour
        
     }
 
-    private void FixedUpdate()
+    // Update is called once per frame
+    void Update()
     {
         rb.rotation = new Quaternion(transform.rotation.x, Camera.transform.rotation.y, transform.rotation.z, transform.rotation.w).normalized;
         Camera.transform.position = rb.position;
         rb.velocity = rb.rotation * direction;
-
-    }
-    // Update is called once per frame
-    void Update()
-    {
 
     }
 
