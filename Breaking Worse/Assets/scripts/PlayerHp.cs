@@ -16,13 +16,13 @@ public class PlayerHp : MonoBehaviour
 
     }
 
-    public void Playerhealth()
-    {
-        Health -= 1; // Decrement Health
-        Debug.Log("au!");
-        if (Health <= 0)
-        {
-            Destroy(gameObject); // Destroy the player object if Health is 0 or less
-        }
-    }
+//    public void Playerhealth()
+//    {
+//        Health -= 1; // Decrement Health
+//        Debug.Log("au!");
+//        if (Health <= 0)
+//        {
+//            Destroy(gameObject); // Destroy the player object if Health is 0 or less
+//        }
+//    }
 }
