@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyAiPatrol : MonoBehaviour
+public class EnemyAiPatrol : MonoBehaviour, ITakeDamageM
 {
     GameObject player;
 
@@ -73,8 +73,9 @@ public class EnemyAiPatrol : MonoBehaviour
             return;
         }
 
-        playerHp.Health -= 1;
-        
+        TakeDamageM(1);
+
+
         StartCooldown();
     }
     private void StartCooldown()
@@ -103,5 +104,10 @@ public class EnemyAiPatrol : MonoBehaviour
         {
             walkpointSet = true;
         }
+    }
+
+    public void TakeDamageM(int damage)
+    {
+        playerHp.Health -= damage;
     }
 }

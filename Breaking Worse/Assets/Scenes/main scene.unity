@@ -20114,6 +20114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 3
+  cooldownTime: 2
 --- !u!1001 &1840967862
 PrefabInstance:
   m_ObjectHideFlags: 0
