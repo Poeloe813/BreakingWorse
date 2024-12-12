@@ -6,7 +6,7 @@ public class InterfaceM : MonoBehaviour
 {
 }
 
-interface ITakeDamageM
+interface ITakeDamageM 
 {
     void TakeDamageM(int damage);
 }

@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -41,6 +38,7 @@ public class EnemyAiPatrol : MonoBehaviour, ITakeDamageM
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        
         // navmesh
         player = GameObject.Find("player");
         // player vinden
